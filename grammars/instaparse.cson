@@ -1,0 +1,120 @@
+{
+    "name": "Instaparse Language",
+    "scopeName": "instaparse",
+    "fileTypes": ["bnf"],
+    "patterns": [
+        {
+            "name": "comment.block.instaparse",
+            "begin": "\\(\\*",
+            "end": "\\*\\)",
+            "patterns": [
+                {
+                    "match": "."
+                }
+            ]
+        },
+        {
+            "match": "^\\s*([\\w-]+)\\s*(:|:=|::=|=)",
+            "captures": {
+                "1": {
+                    "name": "constant.language.instaparse"
+                },
+                "2": {
+                    "name": "punctuation.definition.line.instaparse"
+                }
+            }
+        },
+        {
+            "name": "keyword.note.instaparse",
+            "match": "Epsilon|epsilon|EPSILON|eps"
+        },
+        {
+            "name": "entity.name.function.instaparse",
+            "match": "[\\w-]+"
+        },
+        {
+            "name": "keyword.operator.instaparse",
+            "match": "[|?+*;.]"
+        },
+        {
+            "name": "meta.block.instaparse",
+            "begin": "\\[",
+            "end": "\\]",
+            "patterns": [
+                {
+                    "include": "$self"
+                }
+            ]
+        },
+        {
+            "name": "meta.block.instaparse",
+            "begin": "\\(",
+            "end": "\\)",
+            "patterns": [
+                {
+                    "include": "$self"
+                }
+            ]
+        },
+        {
+            "name": "meta.block.instaparse",
+            "begin": "\\{",
+            "end": "\\}",
+            "patterns": [
+                {
+                    "include": "$self"
+                }
+            ]
+        },
+        {
+            "name": "meta.block.instaparse",
+            "begin": "<",
+            "end": ">",
+            "patterns": [
+                {
+                    "include": "$self"
+                }
+            ]
+        },
+        {
+            "name": "string.quoted.single.instaparse",
+            "begin": "'",
+            "end": "'",
+            "patterns": [
+                {
+                    "match": "."
+                }
+            ]
+        },
+        {
+            "name": "string.quoted.double.instaparse",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "match": "."
+                }
+            ]
+        },
+        {
+            "name": "string.regexp.double.instaparse",
+            "begin": "#\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "match": "."
+                }
+            ]
+        },
+        {
+            "name": "string.regexp.single.instaparse",
+            "begin": "#'",
+            "end": "'",
+            "patterns": [
+                {
+                    "match": "."
+                }
+            ]
+        }
+    ]
+}
